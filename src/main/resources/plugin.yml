@@ -1,0 +1,21 @@
+name: SilkSpawners
+version: '${version}'
+main: com.robigan.silkspawners.SilkSpawners
+api-version: 1.18
+authors: [ robigan ]
+description: A lightweight plugin that just does what the name says, no API, no configs, it just does what the name says; adds a single command for admins
+depend:
+  - NBTAPI
+permissions:
+  silkspawners.*:
+    description: Gives access to all silkspawners perm nodes
+    children:
+      silkspawners.command: true
+  silkspawners.command:
+    default: op
+    description: Allows an op player to generate mob spawners compatible with this SilkSpawners plugin
+commands:
+  spawner:
+    description: Allows for the generation of mob spawners compatible with this SilkSpawners plugin
+    permission: silkspawners.command
+    usage: Please use /spawner <EntityType> <Amount> to generate a spawner of the inputted type
